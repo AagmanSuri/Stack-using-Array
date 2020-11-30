@@ -36,3 +36,16 @@ void push(struct stack *st,int x)
         st->S[st->top]=x;
     }
 }
+int pop(struct stack *st)
+{
+    int x=-1;
+    if(st->top==-1)
+    {
+        printf("Stack Underflown \n ");
+    }
+    else
+    {
+        x=st->S[st->top--];
+    }
+    return x;
+}
