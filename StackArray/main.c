@@ -23,5 +23,16 @@ void Display(struct stack st)
         printf("%d ",st.S[i]);
         printf("\n");
     }
-    
+}
+void push(struct stack *st,int x)
+{
+    if(st->size-1==st->top)
+    {
+        printf("Stack Overflown \n ");
+    }
+    else
+    {
+        st->top++;
+        st->S[st->top]=x;
+    }
 }
