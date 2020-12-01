@@ -49,6 +49,16 @@ int pop(struct stack *st)
     }
     return x;
 }
+int peek(struct stack st,int index)
+{
+    if(st.top-index+1<0)
+    {
+        printf("Invalid Index");
+    }
+    int x=st.S[st.top-index+1]
+    return x;
+}
+
 int main()
 {
     struct stack st;
@@ -60,5 +70,9 @@ int main()
     push(&st, 40);
     push(&st, 50);
     push(&st, 60);
+    
+    printf("%d\n",pop(&st));
+    
     Display(st);
 }
+
