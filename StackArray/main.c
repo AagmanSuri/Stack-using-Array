@@ -58,6 +58,18 @@ int peek(struct stack st,int index)
     int x=st.S[st.top-index+1];
     return x;
 }
+void isEmpty(struct stack st)
+{
+    if(st.top==-1)
+    {
+        printf("isEmpty");
+    }
+    else
+    {
+        printf("is Not Empty");
+    }
+    
+}
 void isFull(struct stack st)
 {
     if(st.top==st.size-1)
@@ -81,9 +93,15 @@ int main()
     push(&st, 40);
     push(&st, 50);
     push(&st, 60);
-    
-    printf("%d\n",pop(&st));
-    
+    printf("\n");
+    isFull(st);
+    printf("\n");
+    isEmpty(st);
+    printf("\n");
+    printf("poped item is %d\n",pop(&st));
+    printf("\n");
+    printf("The stack is \n");
     Display(st);
+    printf("\n");
 }
 
