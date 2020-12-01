@@ -55,10 +55,21 @@ int peek(struct stack st,int index)
     {
         printf("Invalid Index");
     }
-    int x=st.S[st.top-index+1]
+    int x=st.S[st.top-index+1];
     return x;
 }
-
+void isFull(struct stack st)
+{
+    if(st.top==st.size-1)
+    {
+        printf("isFull");
+    }
+    else
+    {
+        printf("it is not full");
+    }
+    
+}
 int main()
 {
     struct stack st;
