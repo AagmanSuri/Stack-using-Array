@@ -9,7 +9,7 @@ struct stack
  
 void create(struct stack *st)
 {
-    printf("Enter the number of the stack");
+    printf("Enter the size");
     scanf("%d",&st->size);
     st->top=-1;
     st->S=(int*)malloc(sizeof(int));
@@ -18,15 +18,15 @@ void create(struct stack *st)
 void Display(struct stack st)
 {
     int i;
-    for(i=st.top;i>0;i--)
+    for(i=st.top;i>=0;i--)
     {
         printf("%d ",st.S[i]);
-        printf("\n");
     }
+    printf("\n");
 }
 void push(struct stack *st,int x)
 {
-    if(st->size-1==st->top)
+    if(st->top==st->size-1)
     {
         printf("Stack Overflown \n ");
     }
@@ -48,4 +48,17 @@ int pop(struct stack *st)
         x=st->S[st->top--];
     }
     return x;
+}
+int main()
+{
+    struct stack st;
+    create(&st);
+    
+    push(&st, 10);
+    push(&st, 20);
+    push(&st, 30);
+    push(&st, 40);
+    push(&st, 50);
+    push(&st, 60);
+    Display(st);
 }
